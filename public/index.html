@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -19,13 +19,61 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>TulFlix</title>
+
+    <script src="%PUBLIC_URL%/js/jquery-3.1.1.min.js"></script>
+	<script src="%PUBLIC_URL%/js/script.js"></script>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div class="wrapper">
+      <header class="header">
+        <figure class="logo"><a href="index"><img src="%PUBLIC_URL%/img/logo.png" alt="Logo"></figure></a>
+        <nav class="menu">
+          <ul>
+            <li><a href="index">Home</a></li>
+            <li><a>Genres</a>
+              <ul>
+                <li><a href="genre">Action</a></li>
+                <li><a href="genre">Comedy</a></li>
+                <li><a href="genre">Drama</a></li>
+                <li><a href="genre">Romance</a></li>
+              </ul>
+            </li>
+            <li><a>Year</a>
+              <ul>
+                <li><a href="year.html">2017</a></li>
+                <li><a href="year.html">2016</a></li>
+                <li><a href="year.html">2015</a></li>
+                <li><a href="year.html">2014</a></li>
+              </ul>
+            </li>
+            <li><a>Language</a>
+              <ul>
+                <li><a href="language.html">English</a></li>
+                <li><a href="language.html">German</a></li>
+              </ul>
+            </li>
+            <li><a href="mostwatched.html">Most Watched</a></li>
+            <li class="mobsearch">
+              <form class="mobform">
+                <input type="text" name="s" class="mobsearchfield" placeholder="Search...">
+                <input type="submit" value="" class="mobsearchsubmit">
+              </form>
+            </li>
+          </ul>
+        </nav>
+        <form class="search">
+          <input type="text" name="s" class="searchfield" placeholder="Search...">
+          <input type="submit" value="" class="searchsubmit">
+        </form>
+  
+        <div class="toggle"><img src="%PUBLIC_URL%/img/menu.svg"></div>
+      </header>
+      <div id="root"></div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -37,4 +85,130 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <!-- Swiper JS -->
+  <script src="%PUBLIC_URL%/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+			$(document).ready(function(){
+
+
+				var swiper = new Swiper('.homeslider > .swiper-container', {
+					pagination: '.swiper-pagination',
+					paginationClickable: true,
+					preventClicks:false,
+					preventClicksPropagation:false,
+					effect:'fade',
+					breakpoints: {
+						320: {
+							height:200
+						},
+
+						480: {
+							height:300
+						},
+
+						768: {
+							height:400
+						},
+						1024: {
+							height:500
+						}
+					}
+				});
+
+				var recentswiper = new Swiper('.recentslider > .swiper-container', {
+					nextButton: '.recent-next',
+					prevButton: '.recent-prev',
+					slidesPerView: 8,
+					paginationClickable: true,
+					preventClicks:false,
+					preventClicksPropagation:false,
+					spaceBetween: 10,
+					breakpoints: {
+						320: {
+							slidesPerView: 3,
+							spaceBetween: 5
+						},
+
+						480: {
+							slidesPerView: 3,
+							spaceBetween: 5
+						},
+
+						768: {
+							slidesPerView: 5,
+							spaceBetween: 5
+						},
+						1024: {
+							slidesPerView: 6,
+							spaceBetween: 10
+						}
+					}
+				});
+
+				var mostswiper = new Swiper('.mostslider > .swiper-container', {
+					nextButton: '.most-next',
+					prevButton: '.most-prev',
+					slidesPerView: 8,
+					paginationClickable: true,
+					preventClicks:false,
+					preventClicksPropagation:false,
+					spaceBetween: 10,
+					breakpoints: {
+						320: {
+							slidesPerView: 3,
+							spaceBetween: 5
+						},
+
+						480: {
+							slidesPerView: 3,
+							spaceBetween: 5
+						},
+
+						768: {
+							slidesPerView: 5,
+							spaceBetween: 5
+						},
+						1024: {
+							slidesPerView: 6,
+							spaceBetween: 10
+						}
+					}
+				});
+
+				var topswiper = new Swiper('.topslider > .swiper-container', {
+					nextButton: '.top-next',
+					prevButton: '.top-prev',
+					slidesPerView: 8,
+					paginationClickable: true,
+					preventClicks:false,
+					preventClicksPropagation:false,
+					spaceBetween: 10,
+					breakpoints: {
+						320: {
+							slidesPerView: 3,
+							spaceBetween: 5
+						},
+
+						480: {
+							slidesPerView: 3,
+							spaceBetween: 5
+						},
+
+						768: {
+							slidesPerView: 5,
+							spaceBetween: 5
+						},
+						1024: {
+							slidesPerView: 6,
+							spaceBetween: 10
+						}
+					}
+				});
+
+			});
+
+			
+		</script>
 </html>
