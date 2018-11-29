@@ -86,40 +86,164 @@
     -->
   </body>
   <!-- Swiper JS -->
-  <script src="%PUBLIC_URL%/js/swiper.min.js"></script>
+  <script src="%PUBLIC_URL%/js/swiper.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
 			$(document).ready(function(){
 
 
-				var swiper = new Swiper('.homeslider > .swiper-container', {
-					pagination: '.swiper-pagination',
-					paginationClickable: true,
-					preventClicks:false,
-					preventClicksPropagation:false,
-					effect:'fade',
-					breakpoints: {
-						320: {
-							height:200
-						},
+				// var swiper = new Swiper('.homeslider > .swiper-container', {
+				// 	pagination: '.swiper-pagination',
+				// 	paginationClickable: true,
+				// 	preventClicks:false,
+				// 	preventClicksPropagation:false,
+				// 	effect:'fade',
+				// 	breakpoints: {
+				// 		320: {
+				// 			height:200
+				// 		},
 
-						480: {
-							height:300
-						},
+				// 		480: {
+				// 			height:300
+				// 		},
 
-						768: {
-							height:400
-						},
-						1024: {
-							height:500
+				// 		768: {
+				// 			height:400
+				// 		},
+				// 		1024: {
+				// 			height:500
+				// 		}
+				// 	}
+				// });
+
+				var peliculasswiper = new Swiper('.peliculas > .swiper-container', {
+						nextButton: '.peliculas-next',
+						prevButton: '.peliculas-prev',
+						slidesPerView: 8,
+						paginationClickable: true,
+						preventClicks:false,
+						preventClicksPropagation:false,
+						spaceBetween: 10,
+						breakpoints: {
+							320: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							480: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							768: {
+								slidesPerView: 5,
+								spaceBetween: 5
+							},
+							1024: {
+								slidesPerView: 6,
+								spaceBetween: 10
+							}
 						}
-					}
+					});
+
+				$('.peliculas > .swiper-container > .swiper-wrapper > .ultimo').bind('DOMNodeInserted DOMNodeRemoved', function() {
+					var peliculasswiper = new Swiper('.peliculas > .swiper-container', {
+						nextButton: '.peliculas-next',
+						prevButton: '.peliculas-prev',
+						slidesPerView: 8,
+						paginationClickable: true,
+						preventClicks:false,
+						preventClicksPropagation:false,
+						spaceBetween: 10,
+						breakpoints: {
+							320: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							480: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							768: {
+								slidesPerView: 5,
+								spaceBetween: 5
+							},
+							1024: {
+								slidesPerView: 6,
+								spaceBetween: 10
+							}
+						}
+					});
+				});
+				
+				var seriesswiper = new Swiper('.series > .swiper-container', {
+						nextButton: '.series-next',
+						prevButton: '.series-prev',
+						slidesPerView: 8,
+						paginationClickable: true,
+						preventClicks:false,
+						preventClicksPropagation:false,
+						spaceBetween: 10,
+						breakpoints: {
+							320: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							480: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							768: {
+								slidesPerView: 5,
+								spaceBetween: 5
+							},
+							1024: {
+								slidesPerView: 6,
+								spaceBetween: 10
+							}
+						}
+					});
+
+				$('.series > .swiper-container > .swiper-wrapper > .ultimo').bind('DOMNodeInserted DOMNodeRemoved', function() {
+					var seriesswiper = new Swiper('.series > .swiper-container', {
+						nextButton: '.series-next',
+						prevButton: '.series-prev',
+						slidesPerView: 8,
+						paginationClickable: true,
+						preventClicks:false,
+						preventClicksPropagation:false,
+						spaceBetween: 10,
+						breakpoints: {
+							320: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							480: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
+
+							768: {
+								slidesPerView: 5,
+								spaceBetween: 5
+							},
+							1024: {
+								slidesPerView: 6,
+								spaceBetween: 10
+							}
+						}
+					});
 				});
 
-				var recentswiper = new Swiper('.recentslider > .swiper-container', {
-					nextButton: '.recent-next',
-					prevButton: '.recent-prev',
+				var documentalesswiper = new Swiper('.documentales > .swiper-container', {
+					nextButton: '.documentales-next',
+					prevButton: '.documentales-prev',
 					slidesPerView: 8,
 					paginationClickable: true,
 					preventClicks:false,
@@ -147,65 +271,38 @@
 					}
 				});
 
-				var mostswiper = new Swiper('.mostslider > .swiper-container', {
-					nextButton: '.most-next',
-					prevButton: '.most-prev',
-					slidesPerView: 8,
-					paginationClickable: true,
-					preventClicks:false,
-					preventClicksPropagation:false,
-					spaceBetween: 10,
-					breakpoints: {
-						320: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
+				$('.documentales > .swiper-container > .swiper-wrapper > .ultimo').bind('DOMNodeInserted DOMNodeRemoved', function() {
+					var documentalesswiper = new Swiper('.documentales > .swiper-container', {
+						nextButton: '.documentales-next',
+						prevButton: '.documentales-prev',
+						slidesPerView: 8,
+						paginationClickable: true,
+						preventClicks:false,
+						preventClicksPropagation:false,
+						spaceBetween: 10,
+						breakpoints: {
+							320: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
 
-						480: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
+							480: {
+								slidesPerView: 3,
+								spaceBetween: 5
+							},
 
-						768: {
-							slidesPerView: 5,
-							spaceBetween: 5
-						},
-						1024: {
-							slidesPerView: 6,
-							spaceBetween: 10
+							768: {
+								slidesPerView: 5,
+								spaceBetween: 5
+							},
+							1024: {
+								slidesPerView: 6,
+								spaceBetween: 10
+							}
 						}
-					}
+					});
 				});
-
-				var topswiper = new Swiper('.topslider > .swiper-container', {
-					nextButton: '.top-next',
-					prevButton: '.top-prev',
-					slidesPerView: 8,
-					paginationClickable: true,
-					preventClicks:false,
-					preventClicksPropagation:false,
-					spaceBetween: 10,
-					breakpoints: {
-						320: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
-
-						480: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
-
-						768: {
-							slidesPerView: 5,
-							spaceBetween: 5
-						},
-						1024: {
-							slidesPerView: 6,
-							spaceBetween: 10
-						}
-					}
-				});
+				
 
 			});
 

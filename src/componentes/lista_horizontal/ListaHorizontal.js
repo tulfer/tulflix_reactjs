@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ListaHorizontal.css'; 
 import ItemPortada from '../item_ portada/ItemPortada';
-import otros from "../../img/others.png";
+import otrosimg from "../../img/others.png";
 import fechaDerecha from "../../img/right-arrow.svg";
 import fechaIzquierda from "../../img/left-arrow.svg";
 
@@ -86,36 +86,30 @@ class ListaHorizontal extends Component {
                 "url_img": "https://image.tmdb.org/t/p/w300/1oC6UwQQm79VxHJUoSi8vcE6Jsm.jpg",
                 "name": "La sombra de la ley (2018)",
                 "ranking": "6.7/10"
-            },
-            {
-                "url": "https://www.pelisplus.to/pelicula/la-sombra-de-la-ley",
-                "url_img": "https://image.tmdb.org/t/p/w300/1oC6UwQQm79VxHJUoSi8vcE6Jsm.jpg",
-                "name": "La sombra de la ley (2018)",
-                "ranking": "6.7/10"
-            },
-            {
-                "url": "https://www.pelisplus.to/pelicula/la-sombra-de-la-ley",
-                "url_img": "https://image.tmdb.org/t/p/w300/1oC6UwQQm79VxHJUoSi8vcE6Jsm.jpg",
-                "name": "La sombra de la ley (2018)",
-                "ranking": "6.7/10"
-            }]
+            }],
+            otros : 0
         }
         this.getContenido(props.from);  
+        
         // this.getContenido(props.from).then(contenido => console.log(contenido));
     }
 
   render() {
+
+let etiquetaa = (this.state.otros == 1)?<a href='mostwatched.html'><img src={otrosimg}/></a>:"-";
+
     return (
         <div className="swiper-container">
             <div className="swiper-wrapper">
                 {
                     this.state.portadas.map((item,i) => <ItemPortada portada={item} key={i} /> )
                 }
-                <div className="swiper-slide"><a href="mostwatched.html"><img src={otros} /></a></div>
+                <div className="swiper-slide ultimo">{etiquetaa}</div>
             </div>
-            <div className="nextdirection recent-next"><img src={fechaDerecha} /> </div>
-            <div className="leftdirection recent-prev"><img src={fechaIzquierda} /> </div>
-        </div>
+            <div className={"nextdirection "+this.props.from+"-next"}><img src={fechaDerecha} /> </div>
+            <div className={"leftdirection "+this.props.from+"-prev"}><img src={fechaIzquierda} /> </div>
+                        
+        </div>   
     );
   }
 
@@ -133,7 +127,8 @@ class ListaHorizontal extends Component {
         .then(Response => Response.json())
         .then(contenido => {
             this.setState({
-                portadas : contenido
+                portadas : contenido,
+                otros: 1
             })
         })
    
