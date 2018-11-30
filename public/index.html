@@ -20,58 +20,17 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>TulFlix</title>
+		<link rel="stylesheet" href="%PUBLIC_URL%/css/swiper.css">
+		<link rel="stylesheet" href="%PUBLIC_URL%/css/general.css">
 
     <script src="%PUBLIC_URL%/js/jquery-3.1.1.min.js"></script>
-	<script src="%PUBLIC_URL%/js/script.js"></script>
+		<script src="%PUBLIC_URL%/js/script.js"></script>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div class="wrapper">
-      <header class="header">
-        <figure class="logo"><a href="index"><img src="%PUBLIC_URL%/img/logo.png" alt="Logo"></figure></a>
-        <nav class="menu">
-          <ul>
-            <li><a href="index">Home</a></li>
-            <li><a>Genres</a>
-              <ul>
-                <li><a href="genre">Action</a></li>
-                <li><a href="genre">Comedy</a></li>
-                <li><a href="genre">Drama</a></li>
-                <li><a href="genre">Romance</a></li>
-              </ul>
-            </li>
-            <li><a>Year</a>
-              <ul>
-                <li><a href="year.html">2017</a></li>
-                <li><a href="year.html">2016</a></li>
-                <li><a href="year.html">2015</a></li>
-                <li><a href="year.html">2014</a></li>
-              </ul>
-            </li>
-            <li><a>Language</a>
-              <ul>
-                <li><a href="language.html">English</a></li>
-                <li><a href="language.html">German</a></li>
-              </ul>
-            </li>
-            <li><a href="mostwatched.html">Most Watched</a></li>
-            <li class="mobsearch">
-              <form class="mobform">
-                <input type="text" name="s" class="mobsearchfield" placeholder="Search...">
-                <input type="submit" value="" class="mobsearchsubmit">
-              </form>
-            </li>
-          </ul>
-        </nav>
-        <form class="search">
-          <input type="text" name="s" class="searchfield" placeholder="Search...">
-          <input type="submit" value="" class="searchsubmit">
-        </form>
-  
-        <div class="toggle"><img src="%PUBLIC_URL%/img/menu.svg"></div>
-      </header>
       <div id="root"></div>
     </div>
     <!--
@@ -93,29 +52,29 @@
 			$(document).ready(function(){
 
 
-				// var swiper = new Swiper('.homeslider > .swiper-container', {
-				// 	pagination: '.swiper-pagination',
-				// 	paginationClickable: true,
-				// 	preventClicks:false,
-				// 	preventClicksPropagation:false,
-				// 	effect:'fade',
-				// 	breakpoints: {
-				// 		320: {
-				// 			height:200
-				// 		},
+				var swiper = new Swiper('.homeslider > .swiper-container', {
+					pagination: '.swiper-pagination',
+					paginationClickable: true,
+					preventClicks:false,
+					preventClicksPropagation:false,
+					effect:'fade',
+					breakpoints: {
+						320: {
+							height:200
+						},
 
-				// 		480: {
-				// 			height:300
-				// 		},
+						480: {
+							height:250
+						},
 
-				// 		768: {
-				// 			height:400
-				// 		},
-				// 		1024: {
-				// 			height:500
-				// 		}
-				// 	}
-				// });
+						768: {
+							height:300
+						},
+						1024: {
+							height:400
+						}
+					}
+				});
 
 				var peliculasswiper = new Swiper('.peliculas > .swiper-container', {
 						nextButton: '.peliculas-next',

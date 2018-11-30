@@ -4,8 +4,8 @@ class ItemPortada extends Component {
   render() {
     return (
         <div className="swiper-slide">
-            <a href="detalles" data-url={this.props.portada.url}>
-                <img src={this.props.portada.url_img} />
+            <a href={"dp/"+this.props.portada.url}>
+                <img src={this.props.portada.url_img} alt="" />
                 <h3 className="hometitle">{this.props.portada.name}</h3>
             </a>
         </div>
