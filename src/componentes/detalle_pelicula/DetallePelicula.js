@@ -22,17 +22,7 @@ class DetallePelicula extends Component {
     return (
         <div>
         <h2>Detalles</h2>
-        {/* <ul>
-            <li>
-            <Link to={`${this.props.match.url}/rendering`}>Rendering with React</Link>
-            </li>
-            <li>
-            <Link to={`${this.props.match.url}/components`}>Components</Link>
-            </li>
-            <li>
-            <Link to={`${this.props.match.url}/props-v-state`}>Props v. State</Link>
-            </li>
-        </ul> */}
+        
 
         <Route path={`${this.props.match.path}/:url`} component={this.CargarContenido} />
         <Route

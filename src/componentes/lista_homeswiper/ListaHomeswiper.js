@@ -48,7 +48,7 @@ class ListaHomeswiper extends Component {
     
     formData.append('accion', 'getProximos');
     
-    fetch('http://tulflix.tk/assets/php/home.php', {
+    fetch('http://api.tulflix.tk', {
         method: 'POST',
         body: formData
         })

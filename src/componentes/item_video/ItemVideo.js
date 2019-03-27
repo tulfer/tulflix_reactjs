@@ -5,33 +5,54 @@ class ItemVideo extends Component {
         super(props);
         this.state = {
             info : [{ 
-                "video" : "",
+                "video" : { 
+                    "rapidvideo" : {
+                        "url" : "",
+                        "calidad" : "",
+                        "estado" : 0
+                    },
+                    "openload" : {
+                        "url" : "",
+                        "calidad" : "",
+                        "estado" : 0
+                    }
+                },
                 "name" : "",
-                "resumen" : ""
+                "resumen" : "",
+                "estado" : "",
+                "img" : ""
                 }]
             }
         this.getContenido(props.from);
     }
   render() {
     return (
-        <div className="detalle-video">
-            <br/><br></br>
-            <h2>
-            {
-                this.state.info.map((item) => item.video )
-            }
-            </h2>
-            <h2>
-            {
-                this.state.info.map((item) => item.name )
-            }
-            </h2>
-            <p>
-            {
-                this.state.info.map((item) => item.resumen )
-            }
-            </p>
-        </div>
+        <main className="content">
+			<div className="single">
+                <section className="movie">
+                    <img src={ this.state.info.map((item) => item.img ) } />
+                    <ul>
+                        <li>
+                        {
+                            decodeURIComponent(escape(this.state.info.map((item) => item.name )))
+                        }
+                        </li>
+                        <li>
+                        {
+                            decodeURIComponent(escape(this.state.info.map((item) => item.resumen )))
+                        }
+                        </li>
+                    </ul>
+                </section>
+                <section className="trailer">
+					<div className="trailer_frame">
+                        <iframe id="elframe" src={ "http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.rapidvideo.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowFullScreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
+					</div>
+				</section>
+                
+            </div>
+            {/* <script src='https://vjs.zencdn.net/7.4.1/video.js'></script> */}
+        </main>
     );
   }
 
@@ -41,7 +62,7 @@ class ItemVideo extends Component {
     formData.append('accion', 'getPelicula');
     formData.append('from', from);
     
-    fetch('http://tulflix.tk/assets/php/home.php', {
+    fetch('http://api.tulflix.tk', {
         method: 'POST',
         body: formData
         })

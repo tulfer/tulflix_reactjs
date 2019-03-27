@@ -77,7 +77,7 @@ class ListaHorizontal extends Component {
 
   render() {
 
-let etiquetaa = (this.state.otros === 1)?<a href='mostwatched.html'><img src={otrosimg} alt="" /></a>:"-";
+let etiquetaa = (this.state.otros === 1)?<a href={ "/" + this.props.from}><img src={otrosimg} alt="" /></a>:"-";
 
     return (
         <div className="swiper-container">
@@ -101,7 +101,7 @@ let etiquetaa = (this.state.otros === 1)?<a href='mostwatched.html'><img src={ot
     formData.append('from', from);
     formData.append('pagina', '1');
     
-    fetch('http://tulflix.tk/assets/php/home.php', {
+    fetch('http://api.tulflix.tk', {
         method: 'POST',
         body: formData
         })

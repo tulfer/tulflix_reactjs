@@ -6,6 +6,9 @@ class Header extends Component {
     render() {
       return (
         <header className="header">
+            {/* <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet" /> */}
+            {/* <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> */}
+
             <figure className="logo"><a href="index"><img src={logo} alt="Logo" /></a></figure>
             <nav className="menu">
             <ul>

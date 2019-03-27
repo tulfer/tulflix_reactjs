@@ -14,6 +14,7 @@ function App() {
         <Route exact path="/" component={Inicio} />
         <Route path="/peliculas" component={Peliculas} />
         <Route path="/series" component={Series} />
+        <Route path="/documentales" component={Documentales} />
         <Route path="/dp" component={Detalles} />
       </div>
     </Router>
@@ -23,7 +24,9 @@ function App() {
 function Peliculas() {
   return (
     <div>
-      <h2>Peliculas</h2>
+      <br></br><br></br>
+      <h1>Peliculas</h1>
+      <center><h2>Pronto...</h2></center>
     </div>
   );
 }
@@ -31,7 +34,18 @@ function Peliculas() {
 function Series() {
   return (
     <div>
-      <h2>Series</h2>
+      <br></br><br></br>
+      <h1>Series</h1>
+      <center><h2>Pronto...</h2></center>
+    </div>
+  );
+}
+function Documentales() {
+  return (
+    <div>
+      <br></br><br></br>
+      <h1>Documentales</h1>
+      <center><h2>Pronto...</h2></center>
     </div>
   );
 }
