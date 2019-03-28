@@ -46,7 +46,7 @@ class ItemVideo extends Component {
                 </section>
                 <section className="trailer">
 					<div className="trailer_frame">
-                        <iframe id="elframe" src={ "http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.rapidvideo.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowFullScreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
+                        <iframe id="elframe" src={ "http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.rapidvideo.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
 					</div>
 				</section>
                 
