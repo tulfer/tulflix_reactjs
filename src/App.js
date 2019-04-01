@@ -4,6 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from './componentes/header/Header';
 import DetallePelicula from './componentes/detalle_pelicula/DetallePelicula';
+import VerOtros from './componentes/ver_otros/VerOtros';
 
 function App() {
   return (
@@ -23,11 +24,7 @@ function App() {
 
 function Peliculas() {
   return (
-    <div>
-      <br></br><br></br>
-      <h1>Peliculas</h1>
-      <center><h2>Pronto...</h2></center>
-    </div>
+    <VerOtros from="peliculas" />
   );
 }
 

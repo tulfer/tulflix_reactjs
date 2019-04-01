@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListaHorizontal from '../lista_horizontal/ListaHorizontal'
 import ListaHomeswiper from '../lista_homeswiper/ListaHomeswiper';
+
 // import Header from '../header/Header';
 
 class Inicio extends Component {
