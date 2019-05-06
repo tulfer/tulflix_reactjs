@@ -9,14 +9,34 @@ class ListaHomeswiper extends Component {
         super(props);
         this.state = {
             home : [{
-                "url" : "https://www.pelisplus.to/pelicula/un-invierno-en-la-playa",
-                "url_img": "https://image.tmdb.org/t/p/w300/eSbsvWMYIHMfP3w6SARZbbLZ3H4.jpg",
-                "name": "Un invierno en la playa (2012)"
+                "name": "Toy Story 4",
+                "url": "https://www.youtube.com/results?search_query=Toy+Story+4",
+                "url_img": "http://api.tulflix.tk/imgs/proximos/Toy_Story_4.jpg",
+                "id": 0
             },
             {
-                "url": "https://www.pelisplus.to/pelicula/el-espinazo-del-diablo",
-                "url_img": "https://image.tmdb.org/t/p/w300/wKHHsu1awdIUHq6OlkMoxEPNylB.jpg",
-                "name": "El espinazo del diablo (2001)"
+                "name": "Los Nuevos Mutantes",
+                "url": "https://www.youtube.com/results?search_query=Los+Nuevos+Mutantes",
+                "url_img": "http://api.tulflix.tk/imgs/proximos/Los_Nuevos_Mutantes.jpg",
+                "id": 1
+            },
+            {
+                "name": "Avatar 2",
+                "url": "https://www.youtube.com/results?search_query=Avatar+2",
+                "url_img": "http://api.tulflix.tk/imgs/proximos/Avatar_2.jpg",
+                "id": 2
+            },
+            {
+                "name": "Guerra Mundial Z 2",
+                "url": "https://www.youtube.com/results?search_query=Guerra+Mundial+Z+2",
+                "url_img": "http://api.tulflix.tk/imgs/proximos/Guerra_Mundial_Z_2.jpg",
+                "id": 3
+            },
+            {
+                "name": "Brothers' Nest",
+                "url": "https://www.youtube.com/results?search_query=Brothers'+Nest",
+                "url_img": "http://api.tulflix.tk/imgs/proximos/Brothers'_Nest.jpg",
+                "id": 4
             }]
         }
         this.getProximos();  

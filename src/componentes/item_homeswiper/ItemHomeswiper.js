@@ -4,7 +4,7 @@ class ItemHomeswiper extends Component {
   render() {
     return (
         <div className="swiper-slide">
-            <img src={this.props.home.url_img} alt="" />
+            <img src={this.props.home.url_img} alt="" className="imgHome" />
             <div className="caption">
                 <div className="captioninside">
                 <h3>{this.props.home.name}</h3>

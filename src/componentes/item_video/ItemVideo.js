@@ -68,6 +68,7 @@ class ItemVideo extends Component {
         })
         .then(Response => Response.json())
         .then(contenido => {
+            console.log(contenido);
             this.setState({
                 info : contenido
             })

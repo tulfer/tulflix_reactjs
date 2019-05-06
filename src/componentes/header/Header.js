@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../img/logo.png';
 import menu from '../../img/menu.svg';
+import FormBuscar from '../form_buscar/FormBuscar';
 
 class Header extends Component {
     render() {
@@ -28,21 +29,29 @@ class Header extends Component {
                 </li>
                 <li><a href="mostwatched.html">Mas vistos</a></li>
                 <li className="mobsearch">
-                <form className="mobform">
-                    <input type="text" name="s" className="mobsearchfield" placeholder="Buscar..." />
-                    <input type="submit" value="" className="mobsearchsubmit" />
-                </form>
+                <div className="mobform">
+                    <input type="text" name="s" onKeyUp={ this.Buscar } className="mobsearchfield" placeholder="Buscar..." />
+                </div>
                 </li>
+                {/* <FormBuscar /> */}
             </ul>
             </nav>
-            <form className="search">
-            <input type="text" name="s" className="searchfield" placeholder="Buscar..." />
-            <input type="submit" value="" className="searchsubmit" />
-            </form>
+            <div className="search">
+                <input type="text" name="s" id="s" onKeyUp={ this.Buscar } className="searchfield" placeholder="Buscar..." />
+            </div>
     
             <div className="toggle"><img src={menu} alt=""/></div>
         </header>
       );
     }
+
+    Buscar = (e) => {
+        if(e.key == 'Enter'){
+            var texto = e.target.value;
+            window.location.href = "/buscar/"+texto;
+          }
+    }
+
+
 }
 export default Header;

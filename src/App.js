@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from './componentes/header/Header';
 import DetallePelicula from './componentes/detalle_pelicula/DetallePelicula';
 import VerOtros from './componentes/ver_otros/VerOtros';
+import Busqueda from './componentes/busqueda/Busqueda';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/series" component={Series} />
         <Route path="/documentales" component={Documentales} />
         <Route path="/dp" component={Detalles} />
+        <Route path="/buscar" component={Buscar} />
       </div>
     </Router>
   );
@@ -49,6 +51,11 @@ function Documentales() {
 function Detalles({ match }) {
   return (
     <DetallePelicula match={match}/>
+  );
+}
+function Buscar({ match }) {
+  return (
+    <Busqueda match={match}/>
   );
 }
 
