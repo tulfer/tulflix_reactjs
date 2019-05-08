@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../../img/logo.png';
+import logo from '../../img/logo_tulflix.png'; 
 import menu from '../../img/menu.svg';
-import FormBuscar from '../form_buscar/FormBuscar';
 
 class Header extends Component {
     render() {
@@ -46,7 +45,7 @@ class Header extends Component {
     }
 
     Buscar = (e) => {
-        if(e.key == 'Enter'){
+        if(e.key === 'Enter'){
             var texto = e.target.value;
             window.location.href = "/buscar/"+texto;
           }

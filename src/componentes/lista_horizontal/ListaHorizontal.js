@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './ListaHorizontal.css'; 
 import ItemPortada from '../item_ portada/ItemPortada';
 import otrosimg from "../../img/others.png";

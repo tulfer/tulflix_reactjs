@@ -10,8 +10,8 @@ class VerBuscar extends Component {
 
   render() {
     return (
-        <main class="content">
-        <section class="centered">
+        <main className="content">
+        <section className="centered">
             <h3>Busqueda</h3>
             <ItemBuscar s={ this.props.s }/>
         </section>

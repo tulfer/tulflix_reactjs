@@ -1,7 +1,7 @@
 // import React, { Component } from 'react';
 import Inicio from './componentes/inicio/Inicio';
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from './componentes/header/Header';
 import DetallePelicula from './componentes/detalle_pelicula/DetallePelicula';
 import VerOtros from './componentes/ver_otros/VerOtros';

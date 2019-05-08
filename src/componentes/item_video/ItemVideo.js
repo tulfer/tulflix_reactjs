@@ -15,22 +15,40 @@ class ItemVideo extends Component {
                         "url" : "",
                         "calidad" : "",
                         "estado" : 0
+                    },
+                    "mystream" : {
+                        "url" : "",
+                        "calidad" : "",
+                        "estado" : 0
                     }
                 },
                 "name" : "",
                 "resumen" : "",
                 "estado" : "",
                 "img" : ""
-                }]
-            }
+                }],
+            cargando : '0'
+        }
         this.getContenido(props.from);
     }
   render() {
+      var  video = <iframe id="elframe" src="http://api.tulflix.tk/video.php?url=" width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>;
+      if(this.state.cargando === '1'){
+        if ( this.state.info.map((item) => item.video.rapidvideo.estado ) === 200 ){
+                video = <iframe id="elframe" src={ "http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.rapidvideo.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>;
+        }else if ( this.state.info.map((item) => item.video.openload.estado ) === 200 ){
+                video = <iframe id="elframe" src={ "http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.openload.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>;
+        }else if ( this.state.info.map((item) => item.video.mystream.estado ) === 200 ){
+                video = <iframe id="elframe" src={ this.state.info.map((item) => item.video.mystream.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>;
+        }else{
+                video = <iframe id="elframe" src={"http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.rapidvideo.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>;
+        }
+      }
     return (
         <main className="content">
 			<div className="single">
                 <section className="movie">
-                    <img src={ this.state.info.map((item) => item.img ) } />
+                    <img alt="img" src={ this.state.info.map((item) => item.img ) } />
                     <ul>
                         <li>
                         {
@@ -46,7 +64,7 @@ class ItemVideo extends Component {
                 </section>
                 <section className="trailer">
 					<div className="trailer_frame">
-                        <iframe id="elframe" src={ "http://api.tulflix.tk/video.php?url=" + this.state.info.map((item) => item.video.rapidvideo.url ) } width="100%" height="500px" scrolling="no" frameBorder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
+                        { video }
 					</div>
 				</section>
                 
@@ -70,9 +88,12 @@ class ItemVideo extends Component {
         .then(contenido => {
             console.log(contenido);
             this.setState({
-                info : contenido
+                info : contenido,
+                cargando : '1'
             })
+            
         })
+
   }
 
 }
