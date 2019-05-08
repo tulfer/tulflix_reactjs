@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class ItemVideo extends Component {
 
     constructor(props){
@@ -48,7 +49,7 @@ class ItemVideo extends Component {
         <main className="content">
 			<div className="single">
                 <section className="movie">
-                    <img alt="img" src={ this.state.info.map((item) => item.img ) } />
+                    <img src={ this.state.info.map((item) => item.img ) } />
                     <ul>
                         <li>
                         {

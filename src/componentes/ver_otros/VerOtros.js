@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ItemOtros from '../item_otros/ItemOtros'
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class VerOtros extends Component {
 
     constructor(props){

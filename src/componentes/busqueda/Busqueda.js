@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import VerBuscar from '../ver_buscar/VerBuscar';
 import './Busqueda.css'
 

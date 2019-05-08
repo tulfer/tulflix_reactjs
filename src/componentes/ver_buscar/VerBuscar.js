@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ItemBuscar from '../item_buscar/ItemBuscar'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class VerBuscar extends Component {
 
